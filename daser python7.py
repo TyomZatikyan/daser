@@ -97,3 +97,43 @@
 #     count += phoneDict[text[i].upper()]
 #     print(count)
 
+x = int(input('enter number :'))
+m_dict = dict([
+    ("1", "one"),         ("11", "eleven"),    ("30", "thirty"), 
+    ("2", "two"),         ("12", "twelve"),    ("40", "forty"),  
+    ("3", "three"),       ("13", "thirteen"),  ("50", "fifty"),  
+    ("4", "four"),        ("14", "fourteen"),  ("60", "sixty"),
+    ("5", "five"),        ("15", "fifteen"),   ("70", "seventiy"),
+    ("6", "six"),         ("16", "sixteen"),   ("80", "eighty"),
+    ("7", "seven"),       ("17", "seventeen"), ("90", "ninety"),
+    ("8", "eight"),       ("18", "eighteen"),  ("100", "one hundred"),
+    ("9", "nine"),        ("19","nineteen"),   ("1000", "one thousand"),
+    ("10", "ten"),        ("20", "twenty"),    ("1000000", "one million"), ("1000000000", "one billion")
+])
+
+# one two three four five six seven eight nine ten eleven twelve
+# thirteen forteen fivteen sixteen seventeen eighteen nineteen
+# twenty thirty forty fifty sixty eighty ninety
+# hundred thousand million billion
+
+# 12
+# 99 
+# 999 | four hundred fifty six
+# 999999 | thousand
+# 999999999 | Million
+# 999999999999 | Bilion
+
+if x == 100 or x == 1000 or x == 1000000 or x == 1000000000:
+    print(m_dict[str(x)])
+elif x < 21:
+    print (m_dict[str(x)])
+elif x > 20 and x < 100:
+    #21 - 99
+    print(m_dict[str(x)[0]+"0"] + " " + m_dict[str(x)[1]])
+elif x < 1000 and x > 100:
+    print(m_dict[str(x)[0]] + " hundred " + m_dict[str(x)[1]+"0"] + " " + m_dict[str(x)[2]])
+elif x > 1000 and x < 1000000:
+    print(m_dict[str(x)[0]] + " thousnd " + m_dict[str(x)[1]] + " hundred " + m_dict[str(x)[2] + "0"] + " " + m_dict[str(x)[3]])
+elif x > 1000000 and x < 10000000:
+    print(m_dict[str(x)[0]] + " million " + m_dict[str(x)[1]] + " hundred " + m_dict[str(x)[2] + "0"] + " thousand " + m_dict[str(x)[3]] + " hundred " + m_dict[str(x)[4] + "0"] + " " + m_dict[str(x)[4]])   
+
